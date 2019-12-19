@@ -34,7 +34,7 @@ mkdir /var/www/html/base &&\
 composer create-project --prefer-dist laravel/lumen /var/www/html/base
 COPY ./composer.json /var/www/html/base/
 COPY ./php.ini /etc/php/7.1/cli/
-RUN  service apache2 restart && cd /var/www/html/base && composer install  && rm -rf /var/www/html/base
+RUN  service apache2 restart && cd /var/www/html/base && composer update  && rm -rf /var/www/html/base
 #config php
 #mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
 #### uncomment line below if use to test localy
